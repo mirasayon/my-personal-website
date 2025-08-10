@@ -4,7 +4,7 @@ import type React from "react";
 import { Contacts } from "%/contacts";
 import { Bio } from "#/components/bio";
 import { Constants } from "#/constants/base";
-import { SupportMe } from "#/components/support_me";
+import { SupportMe } from "#/components/support-me";
 import { Linker } from "#/components/utils/linker";
 
 export default function Root_Page() {

@@ -1,5 +1,5 @@
-User-Agent: *
-Allow: /
+User-agent: *
+Disallow: 
 
-
+Host: https://mirasayon.com
 Sitemap: https://mirasayon.com/sitemap.xml

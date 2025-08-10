@@ -60,7 +60,6 @@ export function CopyLinkButton({
 
             <div className="inline-flex items-center">
                 {copied ? <Check size={16} /> : <Clipboard size={16} />}
-                {/* <span className="">{copied ? "Copied" : ""}</span> */}
             </div>
         </button>
     );
