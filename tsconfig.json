@@ -2,7 +2,7 @@
     "compilerOptions": {
         "tsBuildInfoFile": "./logs/build.tsbuildinfo",
         "lib": ["dom", "dom.iterable", "esnext"],
-        "allowJs": true,
+        "allowJs": false,
         "skipLibCheck": true,
         "strict": true,
         "noEmit": true,
@@ -10,6 +10,7 @@
         "module": "esnext",
         "moduleResolution": "bundler",
         "resolveJsonModule": true,
+        "verbatimModuleSyntax": true,
         "isolatedModules": true,
         "jsx": "preserve",
         "incremental": true,
@@ -21,8 +22,6 @@
         "paths": {
             "#/*": ["./src/*"],
             "%/*": ["./src/components/*"],
-            "#configs/*": ["./src/configs/*"],
-            "#consts/*": ["./src/constants/*"],
             "#css/*": ["./src/styles/*"]
         },
         "target": "ESNext"
@@ -30,3 +29,4 @@
     "include": ["next-env.d.ts", "./src/**/*", ".next/types/**/*.ts"],
     "exclude": ["node_modules"]
 }
+

@@ -1,6 +1,6 @@
 "use client";
-import React, { JSX, useEffect, useState } from "react";
-import { Clipboard, Check, Link2 } from "lucide-react";
+import { type JSX, useEffect, useState } from "react";
+import { Clipboard, Check } from "lucide-react";
 import { useCopyToClipboard } from "react-use";
 const _sizes = ["sm", "md", "lg"];
 type _sizes = ["sm", "md", "lg"];
@@ -51,16 +51,13 @@ export function CopyLinkButton({
             onClick={copyToClipboard}
             aria-label={ariaLabel}
             className={`cursor-pointer inline-flex items-center rounded-md  ${
-                copied ? "bg-emerald-950" : "bg-blue-950"
+                copied ? "bg-violet-800" : "bg-blue-950"
             } text-gray-200  ${sizes[size]} ${className}`}
         >
-            <div className="mr-1 hidden sm:inline-flex">
-                <Link2 size={16} />
-            </div>
-
-            <div className="inline-flex items-center">
+            <div className="inline-flex items-center px-2">
                 {copied ? <Check size={16} /> : <Clipboard size={16} />}
             </div>
         </button>
     );
 }
+

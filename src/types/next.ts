@@ -1,3 +1,4 @@
-export type jsxChildren = Readonly<{
-    children: React.ReactNode;
-}>;
+export type TJsxChildren = {
+    readonly children: React.ReactNode;
+};
+

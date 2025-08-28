@@ -1,6 +1,6 @@
-const logoSizes = 40;
+const logoSizes = 25;
 const links = " flex my-auto";
-import { Links } from "#consts/links";
+import { Links } from "#/constants/links";
 import { Linker } from "./utils/linker";
 import { CopyLinkButton } from "./utils/copy-link";
 export function Contacts() {
@@ -42,3 +42,4 @@ export function Contacts() {
         </div>
     );
 }
+
