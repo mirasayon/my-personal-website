@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export default function BuyMeRamen() {
     return (
         <div>
-            <div className=" flex flex-col justify-center mx-20 items-center">
+            <div className=" flex-col items-center h-screen flex justify-center">
                 <SupportMe />
             </div>
         </div>

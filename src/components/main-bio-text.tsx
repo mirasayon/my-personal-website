@@ -5,7 +5,7 @@ export function MainBioText() {
                 <div>Nodejs developer from Tashkent, Uzbekistan.</div>
                 <div>Big fan of free and open source software.</div>
                 <div>I am currently studying at TUIT University.</div>
-                <div>Lonely...</div>
+                <div>Anime guy, nerd, loner</div>
             </div>
         </div>
     );

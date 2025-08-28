@@ -1,22 +1,21 @@
-const logoSizes = 25;
-const links = " flex my-auto";
+const logoSizes = 22;
 import { Links } from "#/constants/links";
 import { Linker } from "./utils/linker";
 import { CopyLinkButton } from "./utils/copy-link";
 export function Contacts() {
     return (
         <div className={" flex flex-col justify-center items-center"}>
-            <span className={" m-2  "}>Contacts</span>
-            <div className=" gap-4 flex flex-col justify-center items-start">
+            <span className={" font-bold "}>Contacts</span>
+            <div className=" gap-2 flex flex-col justify-center items-start">
                 {Links.map((_link) => {
                     return (
                         <div
                             key={_link.link + _link.name}
-                            className=" outline-2 p-2 w-96 flex justify-between outline-blue-700"
+                            className=" outline-2 p-2 w-85 flex justify-between outline-violet-500/50"
                         >
                             <Linker
                                 href={_link.link}
-                                className={links}
+                                className={"flex"}
                                 type="raw"
                             >
                                 <img

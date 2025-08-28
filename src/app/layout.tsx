@@ -15,8 +15,10 @@ export default function Root_Layout({ children }: TJsxChildren) {
         <html lang="en" translate="yes">
             <body className={`${protofont.className} `}>
                 <div className=" flex flex-row justify-center">
-                    <ShowCurrentLoc />
-                    <div className=" w-300 h-screen">{children}</div>
+                    <div className=" w-1/4  h-screen flex justify-center">
+                        <ShowCurrentLoc />
+                    </div>
+                    <div className=" w-4/3 ">{children}</div>
                 </div>
             </body>
             {cEnv.mode.prod && cEnv.gaid && (

@@ -5,7 +5,7 @@ import { Linker } from "./utils/linker";
 export function ShowCurrentLoc() {
     const pn = usePathname();
     return (
-        <div className=" flex flex-col p-2 gap-2 h-screen items-center justify-center">
+        <div className=" flex flex-col p-2 gap-2  items-center justify-center">
             <Linker
                 href="/"
                 className={`p-1.5 w-40 ${

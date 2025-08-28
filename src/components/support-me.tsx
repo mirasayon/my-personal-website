@@ -10,8 +10,8 @@ export function SupportMe() {
     const [copiedText, setCopiedText] = useState(false);
     const [state, copyToClipboard] = useCopyToClipboard();
     return (
-        <div className="mt-4">
-            <div className="p-6 max-w-md mx-auto bg-white dark:bg-neutral-900 rounded-2xl shadow-lg min-w-[50vh]">
+        <div className="">
+            <div className="p-6 max-w-md  bg-white dark:bg-neutral-900 rounded-2xl shadow-lg">
                 <h2 className="text-2xl font-bold mb-4 text-center">
                     Support Me
                 </h2>
@@ -80,3 +80,4 @@ export function SupportMe() {
         </div>
     );
 }
+
