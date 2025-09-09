@@ -1,4 +1,4 @@
-# My (MiraSayon) Personal website
+# My Personal website
 
 <https://mirasayon.com/>
 
