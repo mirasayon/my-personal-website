@@ -1,4 +1,4 @@
-import type { CryptoCurrecies, waletType } from "#/types/crypto";
+import type { CryptoCurrecies, waletType } from "#/types/crypto-wallets";
 type LinksType = {
     name: string;
     link: string;
@@ -54,17 +54,18 @@ export const wallets: { [key in CryptoCurrecies]: waletType } = {
     },
     USDT_TRC20: {
         address: "THfZnRN3m9AADAYsmdJjcf624UqyF1HLXi",
-        type: "TRC20",
+        network: "TRC20",
         name: "USDT",
         qr: "/qr/usdt_trc20.png",
         normal_name: "Tether USDT (TRC20 Network)",
     },
     USDT_TON: {
         address: "UQCFDoPjpEpbdWxwBVUOIr1aoUlcCOQFsT9AHZtoVdlY6hp8",
-        type: "TON",
+        network: "TON",
         name: "USDT",
         qr: "/qr/usdt_ton.png",
         normal_name: "Tether USDT (TON Network)",
     },
 };
-export const list = Object.keys(wallets) as CryptoCurrecies[];
+export const walletList = Object.keys(wallets) as CryptoCurrecies[];
+

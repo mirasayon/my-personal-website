@@ -1,28 +1,31 @@
-import "#css/globals.tailwind.css";
+import "#/styles/globals.tailwind.css";
 import localFont from "next/font/local";
 import type React from "react";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { cEnv } from "#/configs/env";
-import type { TJsxChildren } from "#/types/next";
-import { ShowCurrentLoc } from "#/components/flex-show-current-link";
+import { envConfig } from "#/configs/env";
+import { ShowCurrentLocation } from "%/show-current-location";
 const protofont = localFont({
-    src: "./_fonts/0xProtoNerdFontMono-Regular.woff2",
+    src: "../assets/fonts/0xProtoNerdFontMono-Regular.woff2",
     display: "swap",
     preload: false,
 });
-export default function Root_Layout({ children }: TJsxChildren) {
+export default function Root_Layout({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
     return (
         <html lang="en" translate="yes">
-            <body className={`${protofont.className} `}>
-                <div className=" flex flex-row justify-center">
-                    <div className=" w-1/4  h-screen flex justify-center">
-                        <ShowCurrentLoc />
+            <body className={protofont.className}>
+                <div className=" flex flex-row justify-center flex-wrap">
+                    <div className=" w-1/5  h-screen flex justify-center">
+                        <ShowCurrentLocation />
                     </div>
-                    <div className=" w-4/3 ">{children}</div>
+                    <div className=" w-4/6 ">{children}</div>
                 </div>
             </body>
-            {cEnv.mode.prod && cEnv.gaid && (
-                <GoogleAnalytics gaId={cEnv.gaid} />
+            {envConfig.isProd && envConfig.gaid && (
+                <GoogleAnalytics gaId={envConfig.gaid} />
             )}
         </html>
     );

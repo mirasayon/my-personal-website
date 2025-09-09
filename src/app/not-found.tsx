@@ -1,6 +1,6 @@
 import { Linker } from "#/components/utils/linker";
 
-export default function NotFound() {
+export default function __NotFoundPage() {
     return (
         <div className={" flex justufi-center flex-col p-20 gap-8"}>
             <h2>Page Not Found</h2>
@@ -10,3 +10,4 @@ export default function NotFound() {
         </div>
     );
 }
+

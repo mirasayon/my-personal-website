@@ -1,11 +1,22 @@
-import type { TJsxChildren } from "#/types/next";
 import Link from "next/link";
-type Props = {
+type LinkerProps = {
     href: string;
     type: "site" | "mail" | "raw";
     className?: string;
-} & TJsxChildren;
-export function Linker({ href, type, children, className = "" }: Props) {
+    children: React.ReactNode;
+    defaultStyles?: boolean | undefined;
+};
+export function Linker({
+    href,
+    type,
+    children,
+    className = "",
+    defaultStyles = true,
+}: LinkerProps) {
+    if (defaultStyles) {
+        className +=
+            " text-blue-800 hover:text-violet-800 dark:text-blue-500 dark:hover:text-violet-500";
+    }
     if (type === "mail") {
         return (
             <Link className={className} href={`mailto:${href}`}>
@@ -28,6 +39,6 @@ export function Linker({ href, type, children, className = "" }: Props) {
             </Link>
         );
     }
-    throw new TypeError("Invalid type attribute");
+    throw new TypeError("Invalid type attribute: " + type);
 }
 

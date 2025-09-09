@@ -2,19 +2,15 @@
 import { type JSX, useEffect, useState } from "react";
 import { Clipboard, Check } from "lucide-react";
 import { useCopyToClipboard } from "react-use";
-const _sizes = ["sm", "md", "lg"];
-type _sizes = ["sm", "md", "lg"];
+const _sizes = ["sm", "md", "lg"] as const;
+type Sizes = (typeof _sizes)[number];
 type CopyLinkButtonProps = {
-    /** The text (link) to copy */
     text: string;
-    /** Accessible label for the button */
     ariaLabel?: string;
-    /** Optional small/medium/large sizes */
-    size?: _sizes[number];
-    /** Extra tailwind classes for the button */
+    size?: Sizes;
     className?: string;
 };
-const sizes: { [key in _sizes[number]]: string } = {
+const sizes: { [key in Sizes]: string } = {
     sm: "px-2 py-1 text-sm gap-1",
     md: "px-3 py-1.5 text-sm gap-2",
     lg: "px-4 py-2 text-base gap-2",
@@ -27,7 +23,7 @@ export function CopyLinkButton({
     className = "",
 }: CopyLinkButtonProps): JSX.Element {
     const [copied, setCopied] = useState(false);
-    const [state, _copyToClipboard] = useCopyToClipboard();
+    const [state, copyToClipboard] = useCopyToClipboard();
 
     useEffect(() => {
         if (!copied) {
@@ -37,25 +33,53 @@ export function CopyLinkButton({
         return () => clearTimeout(id);
     }, [copied]);
 
-    const copyToClipboard = (
+    const clickHandler = (
         e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     ) => {
         e.preventDefault();
-        _copyToClipboard(text);
+        copyToClipboard(text);
         return setCopied(true);
     };
 
     return (
         <button
             type="button"
-            onClick={copyToClipboard}
+            onClick={clickHandler}
             aria-label={ariaLabel}
             className={`cursor-pointer inline-flex items-center rounded-md  ${
-                copied ? "bg-violet-800" : "bg-blue-950"
+                copied
+                    ? "bg-violet-400 dark:bg-violet-800"
+                    : "bg-blue-400 dark:bg-blue-950"
             } text-gray-200  ${sizes[size]} ${className}`}
         >
             <div className="inline-flex items-center px-2">
-                {copied ? <Check size={16} /> : <Clipboard size={16} />}
+                {copied ? (
+                    <>
+                        <Check
+                            size={16}
+                            color={"black"}
+                            className="dark:hidden block"
+                        />
+                        <Check
+                            size={16}
+                            color={"white"}
+                            className="hidden dark:block"
+                        />
+                    </>
+                ) : (
+                    <>
+                        <Clipboard
+                            size={16}
+                            color={"black"}
+                            className="dark:hidden block"
+                        />
+                        <Clipboard
+                            size={16}
+                            color={"white"}
+                            className="hidden dark:block"
+                        />
+                    </>
+                )}
             </div>
         </button>
     );

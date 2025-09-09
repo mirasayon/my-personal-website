@@ -6,9 +6,10 @@ export interface waletType {
     /** URL to QR code */
     qr: string;
     /** Network type */
-    type?: string;
-    /** Code name of currency */
+    network?: string;
+    /** Codename of currency */
     name: string;
     /** Normalized name of currency */
     normal_name: string;
 }
+

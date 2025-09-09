@@ -1,17 +1,18 @@
 "use client";
-import { list, wallets } from "#/constants/links";
-import type { CryptoCurrecies } from "#/types/crypto";
+import { walletList, wallets } from "#/constants/links";
+import type { CryptoCurrecies } from "#/types/crypto-wallets";
 import { useState } from "react";
 import { useCopyToClipboard } from "react-use";
 
 export function SupportMe() {
     const [selected, set_selected] = useState<CryptoCurrecies>("BTC");
-    const { address, qr } = wallets[selected];
+    const { address, qr, name, network } = wallets[selected];
     const [copiedText, setCopiedText] = useState(false);
-    const [state, copyToClipboard] = useCopyToClipboard();
+    const [, copyToClipboard] = useCopyToClipboard();
+    const _name = name + (network ? ` (${network})` : "");
     return (
         <div className="">
-            <div className="p-6 max-w-md  bg-white dark:bg-neutral-900 rounded-2xl shadow-lg">
+            <div className="p-6 max-w-md  bg-slate-200 text-slate-900 dark:text-violet-100 dark:bg-neutral-900 rounded-2xl shadow-lg">
                 <h2 className="text-2xl font-bold mb-4 text-center">
                     Support Me
                 </h2>
@@ -23,14 +24,14 @@ export function SupportMe() {
                 </div>
 
                 <div className="flex justify-center mb-4 space-x-3">
-                    {list.map((currency) => (
+                    {walletList.map((currency) => (
                         <div key={currency}>
                             <button
                                 key={currency}
                                 className={`px-3 py-1 rounded-full text-sm font-medium cursor-pointer ${
                                     selected === currency
                                         ? "bg-blue-600 text-white"
-                                        : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+                                        : "bg-slate-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200"
                                 }`}
                                 onClick={(e) => {
                                     e.preventDefault();
@@ -39,8 +40,8 @@ export function SupportMe() {
                                 }}
                             >
                                 {wallets[currency].name}
-                                {wallets[currency]?.type &&
-                                    `(${wallets[currency]?.type})`}
+                                {wallets[currency]?.network &&
+                                    `(${wallets[currency]?.network})`}
                             </button>
                         </div>
                     ))}
@@ -53,28 +54,23 @@ export function SupportMe() {
                     alt={`${selected} QR`}
                     className="mx-auto w-40 h-40 mb-4"
                 />
-                <div className="bg-gray-100 dark:bg-gray-800 p-3 rounded-md text-sm break-all text-center">
+                <div className="bg-gray-300 dark:bg-gray-800 p-3  text-black dark:text-slate-400 rounded-md text-sm break-all text-center">
                     {address}
                 </div>
                 <button
                     type="button"
-                    onClick={async (e) => {
+                    onClick={(e) => {
                         e.preventDefault();
                         copyToClipboard(address);
-
                         return setCopiedText(true);
                     }}
                     className={`
                         mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition cursor-pointer
-                         ${
-                             copiedText
-                                 ? "bg-violet-700 hover:bg-violet-800"
-                                 : ""
-                         }`}
+                         ${copiedText && "bg-violet-700 hover:bg-violet-800"} `}
                 >
                     {copiedText
-                        ? `${selected} address copied. Thank You❤️`
-                        : `Copy ${selected} Address`}
+                        ? `${_name} address copied. Thank You❤️`
+                        : `Copy ${_name} Address`}
                 </button>
             </div>
         </div>

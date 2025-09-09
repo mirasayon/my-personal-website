@@ -8,24 +8,24 @@
         "dev:turbo": "next dev --port 3005 --hostname 192.168.0.105 --turbopack",
         "build": "next build",
         "start": "next start",
-        "inspect:hot": "tsc --watch --noEmit",
+        "inspector": "tsc --watch --noEmit",
         "start:test": "next start --port 2005",
         "start:dev": "next start --port 3005"
     },
     "dependencies": {
         "@next/third-parties": "^15.5.2",
-        "lucide-react": "^0.542.0",
+        "lucide-react": "^0.543.0",
         "next": "^15.5.2",
         "react": "^19.1.1",
         "react-dom": "^19.1.1",
         "react-use": "^17.6.0"
     },
     "devDependencies": {
-        "@tailwindcss/postcss": "^4.1.12",
-        "@types/node": "^24.3.0",
+        "@tailwindcss/postcss": "^4.1.13",
+        "@types/node": "^24.3.1",
         "@types/react": "^19.1.12",
         "@types/react-dom": "^19.1.9",
-        "tailwindcss": "^4.1.12",
+        "tailwindcss": "^4.1.13",
         "typescript": "^5.9.2"
     }
 }
