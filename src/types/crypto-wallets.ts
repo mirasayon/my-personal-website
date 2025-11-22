@@ -1,6 +1,6 @@
-/** Crypto Cerrencies Type */
-export type CryptoCurrecies = "BTC" | "ETH" | "USDT_TRC20" | "USDT_TON";
-export interface waletType {
+/** Crypto Currencies Type */
+export type CryptoCurrencies = "BTC" | "ETH" | "USDT_TRC20" | "USDT_TON";
+export interface walletType {
     /** Address string */
     address: string;
     /** URL to QR code */
@@ -12,4 +12,3 @@ export interface waletType {
     /** Normalized name of currency */
     normal_name: string;
 }
-

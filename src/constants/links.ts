@@ -1,4 +1,4 @@
-import type { CryptoCurrecies, waletType } from "#/types/crypto-wallets";
+import type { CryptoCurrencies, walletType } from "#/types/crypto-wallets";
 type LinksType = {
     name: string;
     link: string;
@@ -39,7 +39,7 @@ export const xLinks = new (class LinksClass {
     twitter = "x.com/mirasayon" as const;
     telegram = "t.me/mirasayon" as const;
 })();
-export const wallets: { [key in CryptoCurrecies]: waletType } = {
+export const wallets: { [key in CryptoCurrencies]: walletType } = {
     BTC: {
         address: "17dYRDZ5UM2F5Xif1KNh9KuEXmLpMbZA1Y",
         qr: "/qr/btc.png",
@@ -67,5 +67,4 @@ export const wallets: { [key in CryptoCurrecies]: waletType } = {
         normal_name: "Tether USDT (TON Network)",
     },
 };
-export const walletList = Object.keys(wallets) as CryptoCurrecies[];
-
+export const walletList = Object.keys(wallets) as CryptoCurrencies[];

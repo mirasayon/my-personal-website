@@ -5,14 +5,15 @@ import { my_age } from "#/constants/base";
 
 export default function __HomePage() {
     return (
-        <div className=" h-screen flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center">
             <div className={"flex flex-col items-center p-2"}>
                 <div>{"*".repeat(my_age)}</div>
                 <MainBioText />
                 <img
+                    loading="lazy"
                     src={"/_assets/vamola-chan-i-love-you.png"}
                     className={"p-2 h-100"}
-                    alt={"Vamola chann"}
+                    alt={"Vamola chan"}
                 />
                 <Contacts />
             </div>
@@ -23,4 +24,3 @@ export default function __HomePage() {
 export const metadata: Metadata = {
     title: "Hello World :3",
 };
-

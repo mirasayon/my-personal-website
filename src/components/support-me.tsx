@@ -1,11 +1,11 @@
 "use client";
 import { walletList, wallets } from "#/constants/links";
-import type { CryptoCurrecies } from "#/types/crypto-wallets";
+import type { CryptoCurrencies } from "#/types/crypto-wallets";
 import { useState } from "react";
 import { useCopyToClipboard } from "react-use";
 
 export function SupportMe() {
-    const [selected, set_selected] = useState<CryptoCurrecies>("BTC");
+    const [selected, set_selected] = useState<CryptoCurrencies>("BTC");
     const { address, qr, name, network } = wallets[selected];
     const [copiedText, setCopiedText] = useState(false);
     const [, copyToClipboard] = useCopyToClipboard();
@@ -51,6 +51,7 @@ export function SupportMe() {
                 </div>
                 <img
                     src={qr}
+                    loading="lazy"
                     alt={`${selected} QR`}
                     className="mx-auto w-40 h-40 mb-4"
                 />
@@ -76,4 +77,3 @@ export function SupportMe() {
         </div>
     );
 }
-

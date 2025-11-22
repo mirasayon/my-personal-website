@@ -8,6 +8,5 @@ export const envConfig = new (class EnvClass {
     isDev = this.NODE_ENV === "development";
 
     /** Google Analytics ID */
-    gaid = env.GAID as string;
+    googleAnalyticsId = env.GAID as string;
 })();
-

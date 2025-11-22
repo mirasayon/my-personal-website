@@ -24,7 +24,6 @@ export function Linker({
             </Link>
         );
     }
-
     if (type === "site") {
         return (
             <Link className={className} href={`https://${href}`}>
@@ -41,4 +40,3 @@ export function Linker({
     }
     throw new TypeError("Invalid type attribute: " + type);
 }
-

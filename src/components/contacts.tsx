@@ -19,6 +19,7 @@ export function Contacts() {
                                 type="raw"
                             >
                                 <img
+                                    loading="lazy"
                                     className={" logo"}
                                     src={_link.icon_path}
                                     alt={`${_link.name} icon`}
@@ -41,4 +42,3 @@ export function Contacts() {
         </div>
     );
 }
-
