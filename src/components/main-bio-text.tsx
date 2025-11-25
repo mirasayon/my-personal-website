@@ -4,8 +4,8 @@ export function MainBioText() {
             <div className="flex flex-col">
                 <div>Web developer from Tashkent, Uzbekistan.</div>
                 <div>Big fan of free and open source software.</div>
+                <div>reanime.art developer</div>
             </div>
         </div>
     );
 }
-

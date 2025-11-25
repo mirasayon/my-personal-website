@@ -6,10 +6,8 @@ import { envConfig } from "#/configs/env";
 import { ShowCurrentLocation } from "%/show-current-location";
 const protoFont = localFont({
     src: "../assets/fonts/0xProtoNerdFontMono-Regular.woff2",
-    display: "swap",
-    preload: false,
 });
-export default function Root_Layout({
+export default function __Root_Layout({
     children,
 }: {
     children: React.ReactNode;

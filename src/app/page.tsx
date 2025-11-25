@@ -9,13 +9,15 @@ export default function __HomePage() {
             <div className={"flex flex-col items-center p-2"}>
                 <div>{"*".repeat(my_age)}</div>
                 <MainBioText />
-                <img
-                    loading="lazy"
-                    src={"/_assets/vamola-chan-i-love-you.png"}
-                    className={"p-2 h-100"}
-                    alt={"Vamola chan"}
-                />
-                <Contacts />
+                <div className="flex flex-wrap justify-center">
+                    <img
+                        loading="lazy"
+                        src={"/_assets/vamola-chan-i-love-you.png"}
+                        className={"p-5 h-80"}
+                        alt={"Vamola chan"}
+                    />
+                    <Contacts />
+                </div>
             </div>
         </div>
     );

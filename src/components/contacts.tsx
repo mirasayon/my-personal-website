@@ -1,4 +1,4 @@
-const logoSizes = 22;
+const logoSizes = 23;
 import { Links } from "#/constants/links";
 import { Linker } from "./utils/linker";
 import { CopyLinkButton } from "./utils/copy-link";
@@ -20,13 +20,13 @@ export function Contacts() {
                             >
                                 <img
                                     loading="lazy"
-                                    className={" logo"}
+                                    className={"logo"}
                                     src={_link.icon_path}
                                     alt={`${_link.name} icon`}
                                     width={logoSizes}
                                     height={logoSizes}
                                 />
-                                <span className={" my-auto  m-2"}>
+                                <span className={"mx-2"}>
                                     {_link.link_render_name}
                                 </span>
                             </Linker>
