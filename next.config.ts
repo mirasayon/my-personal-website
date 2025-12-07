@@ -2,7 +2,6 @@ import type { NextConfig } from "next";
 
 const config: NextConfig = {
     poweredByHeader: false,
-    reactCompiler: true,
     devIndicators: {
         position: "bottom-left",
     },

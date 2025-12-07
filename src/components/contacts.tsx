@@ -20,7 +20,7 @@ export function Contacts() {
                             >
                                 <img
                                     loading="lazy"
-                                    className={"logo"}
+                                    className={"logo my-1"}
                                     src={_link.icon_path}
                                     alt={`${_link.name} icon`}
                                     width={logoSizes}

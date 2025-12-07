@@ -1,6 +1,5 @@
 "use client";
 import { type JSX, useEffect, useState } from "react";
-import { Clipboard, Check } from "lucide-react";
 import { useCopyToClipboard } from "react-use";
 const _sizes = ["sm", "md", "lg"] as const;
 type Sizes = (typeof _sizes)[number];
@@ -23,7 +22,7 @@ export function CopyLinkButton({
     className = "",
 }: CopyLinkButtonProps): JSX.Element {
     const [copied, setCopied] = useState(false);
-    const [state, copyToClipboard] = useCopyToClipboard();
+    const [, copyToClipboard] = useCopyToClipboard();
 
     useEffect(() => {
         if (!copied) {
@@ -52,36 +51,59 @@ export function CopyLinkButton({
                     : "bg-blue-400 dark:bg-blue-950"
             } text-gray-200  ${sizes[size]} ${className}`}
         >
-            <div className="inline-flex items-center px-2">
+            <div className=" items-center px-1 w-8">
                 {copied ? (
-                    <>
+                    <div>
                         <Check
-                            size={16}
+                            size={iconSizes}
                             color={"black"}
                             className="dark:hidden block"
                         />
                         <Check
-                            size={16}
+                            size={iconSizes}
                             color={"white"}
                             className="hidden dark:block"
                         />
-                    </>
+                    </div>
                 ) : (
-                    <>
+                    <div>
                         <Clipboard
-                            size={16}
+                            size={iconSizes}
                             color={"black"}
                             className="dark:hidden block"
                         />
                         <Clipboard
-                            size={16}
+                            size={iconSizes}
                             color={"white"}
                             className="hidden dark:block"
                         />
-                    </>
+                    </div>
                 )}
             </div>
         </button>
     );
 }
-
+const iconSizes = "7px";
+type IconProps = {
+    className: string;
+    size: string;
+    color: "white" | "black";
+};
+function Clipboard({ color, className = "", size }: IconProps) {
+    return (
+        <img
+            src={`/_assets/ui-icons/${color}-clipboard.svg`}
+            alt="clipboard"
+            className={className + ` h-${size} w-${size}`}
+        />
+    );
+}
+function Check({ color, className = "", size }: IconProps) {
+    return (
+        <img
+            src={`/_assets/ui-icons/${color}-check.svg`}
+            alt="check"
+            className={className + ` h-${size} w-${size} `}
+        />
+    );
+}
