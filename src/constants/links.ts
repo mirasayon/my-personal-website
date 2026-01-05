@@ -31,14 +31,6 @@ export const LINKS_SOCIAL: SocialLinksType = [
         icon_path: "/_assets/icons/telegram-icon.png",
     },
 ];
-
-export const LINKS = {
-    reanime: "reanime.art",
-    github: "github.com/mirasayon",
-    mail: "mirasayon@ya.ru",
-    twitter: "x.com/mirasayon",
-    telegram: "t.me/mirasayon",
-} as const;
 export const WALLETS: { [key in CryptoCurrencies]: WalletType } = {
     BTC: {
         address: "17dYRDZ5UM2F5Xif1KNh9KuEXmLpMbZA1Y",
@@ -67,4 +59,9 @@ export const WALLETS: { [key in CryptoCurrencies]: WalletType } = {
         normal_name: "Tether USDT (TON Network)",
     },
 };
-export const WALLET_TYPES = Object.keys(WALLETS) as CryptoCurrencies[];
+export const WALLET_TYPES = [
+    "BTC",
+    "ETH",
+    "USDT_TRC20",
+    "USDT_TON",
+] as CryptoCurrencies[];
