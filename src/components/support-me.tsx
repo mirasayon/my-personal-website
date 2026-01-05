@@ -1,6 +1,9 @@
 "use client";
-import { WALLET_TYPES, WALLETS } from "#/constants/links";
-import type { CryptoCurrencies } from "#/types/crypto-wallets";
+import {
+    WALLET_TYPES,
+    WALLETS,
+    type CryptoCurrencies,
+} from "#/constants/links";
 import { useState } from "react";
 import { useCopyToClipboard } from "react-use";
 
@@ -12,7 +15,6 @@ export function SupportMeComponent() {
     const _name = name + (network ? ` (${network})` : "");
     return (
         <div className="p-4 max-w-120  bg-slate-200 text-slate-900 dark:text-violet-100 dark:bg-neutral-900 rounded-2xl shadow-lg">
-            <h2 className="text-2xl font-bold mb-2 text-center">Support Me</h2>
             <div className="pb-2">
                 <span>
                     If you enjoy what I do and want to support my work - feel

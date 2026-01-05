@@ -1,7 +1,6 @@
-import type { CryptoCurrencies, WalletType } from "#/types/crypto-wallets";
 type SocialLinksType = {
     name: string;
-    link: string;
+    url: string;
     icon_path: string;
     link_render_name: string;
 }[];
@@ -9,24 +8,24 @@ export const LINKS_SOCIAL: SocialLinksType = [
     {
         name: "mail",
         icon_path: "/_assets/icons/mail.png",
-        link: "mailto:mirasayon@ya.ru",
+        url: "mailto:mirasayon@ya.ru",
         link_render_name: "mirasayon@ya.ru",
     },
     {
         name: "twitter",
         icon_path: "/_assets/icons/x_icon.png",
-        link: "https://x.com/mirasayon",
+        url: "https://x.com/mirasayon",
         link_render_name: "@mirasayon",
     },
     {
         name: "github",
-        link: "https://github.com/mirasayon",
+        url: "https://github.com/mirasayon",
         icon_path: "/_assets/icons/github_icon.png",
         link_render_name: "/mirasayon",
     },
     {
         name: "telegram",
-        link: "https://t.me/mirasayon",
+        url: "https://t.me/mirasayon",
         link_render_name: "@mirasayon",
         icon_path: "/_assets/icons/telegram-icon.png",
     },
@@ -59,9 +58,13 @@ export const WALLETS: { [key in CryptoCurrencies]: WalletType } = {
         normal_name: "Tether USDT (TON Network)",
     },
 };
-export const WALLET_TYPES = [
-    "BTC",
-    "ETH",
-    "USDT_TRC20",
-    "USDT_TON",
-] as CryptoCurrencies[];
+export const WALLET_TYPES = ["BTC", "ETH", "USDT_TRC20", "USDT_TON"] as const;
+/** Crypto Currencies Type */
+export type CryptoCurrencies = (typeof WALLET_TYPES)[number];
+export interface WalletType {
+    address: string;
+    qr: string;
+    network?: string;
+    name: string;
+    normal_name: string;
+}

@@ -1,25 +1,14 @@
 "use client";
 import { type JSX, useEffect, useState } from "react";
 import { useCopyToClipboard } from "react-use";
-const _sizes = ["sm", "md", "lg"] as const;
-type Sizes = (typeof _sizes)[number];
 type CopyLinkButtonProps = {
     text: string;
     ariaLabel?: string;
-    size?: Sizes;
-    className?: string;
-};
-const sizes: { [key in Sizes]: string } = {
-    sm: "px-2 py-1 text-sm gap-1",
-    md: "px-3 py-1.5 text-sm gap-2",
-    lg: "px-4 py-2 text-base gap-2",
 };
 
 export function CopyLinkButton({
     text,
     ariaLabel = "Copy link",
-    size = "md",
-    className = "",
 }: CopyLinkButtonProps): JSX.Element {
     const [copied, setCopied] = useState(false);
     const [, copyToClipboard] = useCopyToClipboard();
@@ -49,7 +38,7 @@ export function CopyLinkButton({
                 copied
                     ? "bg-violet-400 dark:bg-violet-800"
                     : "bg-blue-400 dark:bg-blue-950"
-            } text-gray-200  ${sizes[size]} ${className}`}
+            } text-gray-200 px-2 py-1 text-sm gap-1`}
         >
             <div className=" items-center px-1 w-8">
                 {copied ? (
