@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "tsBuildInfoFile": "./logs/build.tsbuildinfo",
+        "tsBuildInfoFile": "./build.tsbuildinfo",
         "lib": ["dom", "dom.iterable", "esnext"],
         "allowJs": false,
         "skipLibCheck": true,

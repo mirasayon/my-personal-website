@@ -9,8 +9,8 @@
     "type": "module",
     "private": true,
     "scripts": {
-        "dev": "next dev --port 3005 --hostname 192.168.0.105",
-        "dev:webpack": "next dev --port 3005 --hostname 192.168.0.105 --webpack",
+        "dev": "next dev --port 3005",
+        "dev:webpack": "next dev --port 3005 --webpack",
         "build": "next build",
         "start": "next start",
         "inspector": "tsc --watch --noEmit",
