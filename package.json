@@ -14,7 +14,8 @@
         "dev:webpack": "next dev --port 3005 --webpack",
         "build": "next build",
         "start": "next start",
-        "inspector": "tsc --watch --noEmit",
+        "type:check": "tsc --noEmit",
+        "type:watch": "tsc --watch --noEmit",
         "start:test": "next start --port 2005",
         "start:dev": "next start --port 3005"
     },
