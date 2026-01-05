@@ -1,6 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
-import { Linker } from "./utils/linker";
+import { Linker } from "../utils/linker";
 function activeStyles(active: boolean): string {
     const BASE = "p-1.5 w-40";
     const ACTIVE = "bg-violet-400 dark:bg-violet-700";

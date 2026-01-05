@@ -1,11 +1,11 @@
-import type { CryptoCurrencies, walletType } from "#/types/crypto-wallets";
-type LinksType = {
+import type { CryptoCurrencies, WalletType } from "#/types/crypto-wallets";
+type SocialLinksType = {
     name: string;
     link: string;
     icon_path: string;
     link_render_name: string;
 }[];
-export const Links: LinksType = [
+export const LINKS_SOCIAL: SocialLinksType = [
     {
         name: "mail",
         icon_path: "/_assets/icons/mail.png",
@@ -32,14 +32,14 @@ export const Links: LinksType = [
     },
 ];
 
-export const xLinks = new (class LinksClass {
-    reanime = "reanime.art" as const;
-    github = "github.com/mirasayon" as const;
-    mail = "mirasayon@ya.ru" as const;
-    twitter = "x.com/mirasayon" as const;
-    telegram = "t.me/mirasayon" as const;
-})();
-export const wallets: { [key in CryptoCurrencies]: walletType } = {
+export const LINKS = {
+    reanime: "reanime.art",
+    github: "github.com/mirasayon",
+    mail: "mirasayon@ya.ru",
+    twitter: "x.com/mirasayon",
+    telegram: "t.me/mirasayon",
+} as const;
+export const WALLETS: { [key in CryptoCurrencies]: WalletType } = {
     BTC: {
         address: "17dYRDZ5UM2F5Xif1KNh9KuEXmLpMbZA1Y",
         qr: "/qr/btc.png",
@@ -67,4 +67,4 @@ export const wallets: { [key in CryptoCurrencies]: walletType } = {
         normal_name: "Tether USDT (TON Network)",
     },
 };
-export const walletList = Object.keys(wallets) as CryptoCurrencies[];
+export const WALLET_TYPES = Object.keys(WALLETS) as CryptoCurrencies[];

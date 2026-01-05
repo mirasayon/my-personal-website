@@ -1,6 +1,6 @@
 /** Crypto Currencies Type */
 export type CryptoCurrencies = "BTC" | "ETH" | "USDT_TRC20" | "USDT_TON";
-export interface walletType {
+export interface WalletType {
     /** Address string */
     address: string;
     /** URL to QR code */

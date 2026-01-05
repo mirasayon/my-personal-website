@@ -1,13 +1,13 @@
 const logoSizes = 23;
-import { Links } from "#/constants/links";
-import { Linker } from "./utils/linker";
-import { CopyLinkButton } from "./utils/copy-link";
+import { LINKS_SOCIAL } from "#/constants/links";
+import { Linker } from "../utils/linker";
+import { CopyLinkButton } from "../utils/copy-link";
 export function Contacts() {
     return (
         <div className={" flex flex-col justify-center items-center"}>
             <span className={" font-bold "}>Contacts</span>
             <div className=" gap-2 flex flex-col justify-center items-start">
-                {Links.map((_link) => {
+                {LINKS_SOCIAL.map((_link) => {
                     return (
                         <div
                             key={_link.link + _link.name}

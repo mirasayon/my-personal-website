@@ -1,12 +1,12 @@
 "use client";
-import { walletList, wallets } from "#/constants/links";
+import { WALLET_TYPES, WALLETS } from "#/constants/links";
 import type { CryptoCurrencies } from "#/types/crypto-wallets";
 import { useState } from "react";
 import { useCopyToClipboard } from "react-use";
 
 export function SupportMeComponent() {
     const [selected, set_selected] = useState<CryptoCurrencies>("BTC");
-    const { address, qr, name, network } = wallets[selected];
+    const { address, qr, name, network } = WALLETS[selected];
     const [copiedText, setCopiedText] = useState(false);
     const [, copyToClipboard] = useCopyToClipboard();
     const _name = name + (network ? ` (${network})` : "");
@@ -21,7 +21,7 @@ export function SupportMeComponent() {
             </div>
 
             <div className="flex justify-center m-2 space-x-3">
-                {walletList.map((currency) => (
+                {WALLET_TYPES.map((currency) => (
                     <div key={currency}>
                         <button
                             key={currency}
@@ -36,15 +36,15 @@ export function SupportMeComponent() {
                                 set_selected(currency);
                             }}
                         >
-                            {wallets[currency].name}
-                            {wallets[currency]?.network &&
-                                `(${wallets[currency]?.network})`}
+                            {WALLETS[currency].name}
+                            {WALLETS[currency]?.network &&
+                                `(${WALLETS[currency]?.network})`}
                         </button>
                     </div>
                 ))}
             </div>
             <div className=" text-center pb-4">
-                {wallets[selected].normal_name}
+                {WALLETS[selected].normal_name}
             </div>
             <img
                 src={qr}

@@ -1,4 +1,4 @@
-import { Linker } from "#/components/utils/linker";
+import { Linker } from "#/utils/linker";
 import type { Metadata } from "next";
 
 export default function __NotFoundPage() {
