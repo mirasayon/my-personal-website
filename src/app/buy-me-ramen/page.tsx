@@ -1,8 +1,12 @@
 import { SupportMeComponent } from "#/components/support-me";
 import type { Metadata } from "next";
-
+import { Suspense } from "react";
 export default function __BuyMeARamen() {
-    return <SupportMeComponent />;
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <SupportMeComponent />
+        </Suspense>
+    );
 }
 
 export const metadata: Metadata = {
