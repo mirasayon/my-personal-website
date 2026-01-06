@@ -19,37 +19,18 @@
         --background: #202020;
         --foreground: #c3e9ff;
     }
-
     @media (prefers-color-scheme: dark) {
         :root {
             --background: #0a0a0a;
             --foreground: #ededed;
         }
-        .logo {
-            filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-        }
-        /* a {
-            color: aqua;
-        }
-
-        a:hover {
-            color: violet;
-        } */
     }
     @media (prefers-color-scheme: light) {
         :root {
             --background: #dafeff;
             --foreground: #313131;
         }
-        /* a {
-            color: rgb(0, 55, 206);
-        }
-
-        a:hover {
-            color: rgb(255, 0, 255);
-        } */
     }
-
     body {
         color: var(--foreground);
         background: var(--background);

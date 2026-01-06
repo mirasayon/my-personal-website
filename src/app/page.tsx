@@ -8,9 +8,8 @@ export default function __HomePage() {
             <MainBioText />
             <div className="flex flex-wrap justify-center">
                 <img
-                    loading="lazy"
                     src={"/_assets/vamola-chan-i-love-you.png"}
-                    className={"p-5 h-80"}
+                    className={"p-4 h-80"}
                     alt={"Vamola chan"}
                 />
                 <Contacts />

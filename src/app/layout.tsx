@@ -13,14 +13,15 @@ export default function __Root_Layout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" translate="yes">
-            <body className={protoFont.className}>
-                <div className=" flex flex-col justify-center flex-wrap">
-                    <div className=" flex justify-center">
-                        <ShowCurrentLocation />
-                    </div>
-                    <div className=" ">{children}</div>
-                </div>
+        <html lang="en">
+            <body
+                className={
+                    protoFont.className +
+                    " flex flex-col justify-center flex-wrap"
+                }
+            >
+                <ShowCurrentLocation />
+                {children}
             </body>
             {envConfig.isProd && envConfig.googleAnalyticsId && (
                 <GoogleAnalytics gaId={envConfig.googleAnalyticsId} />

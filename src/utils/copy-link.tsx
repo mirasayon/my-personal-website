@@ -6,10 +6,7 @@ type CopyLinkButtonProps = {
     ariaLabel?: string;
 };
 
-export function CopyLinkButton({
-    text,
-    ariaLabel = "Copy link",
-}: CopyLinkButtonProps): JSX.Element {
+export function CopyLinkButton({ text }: CopyLinkButtonProps): JSX.Element {
     const [copied, setCopied] = useState(false);
     const [, copyToClipboard] = useCopyToClipboard();
 
@@ -26,18 +23,18 @@ export function CopyLinkButton({
     ) => {
         e.preventDefault();
         copyToClipboard(text);
-        return setCopied(true);
+        setCopied(true);
     };
 
     return (
         <button
             type="button"
             onClick={clickHandler}
-            aria-label={ariaLabel}
+            aria-label={`Copy ${text} link`}
             className={`cursor-pointer inline-flex items-center rounded-md  ${
                 copied
                     ? "bg-violet-400 dark:bg-violet-800"
-                    : "bg-blue-400 dark:bg-blue-950"
+                    : "bg-violet-400 dark:bg-blue-950"
             } text-gray-200 px-2 py-1 text-sm gap-1`}
         >
             <div className=" items-center px-1 w-8">
