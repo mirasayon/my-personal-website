@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import type React from "react";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { envConfig } from "#/configs/env";
-import { ShowCurrentLocation } from "%/show-current-location";
+import { ShowCurrentLocation } from "#/components/show-current-location";
 const protoFont = localFont({
     src: "../assets/fonts/0xProtoNerdFontMono-Regular.woff2",
 });

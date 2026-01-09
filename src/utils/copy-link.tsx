@@ -1,43 +1,38 @@
 "use client";
-import { type JSX, useEffect, useState } from "react";
-import { useCopyToClipboard } from "react-use";
+import { useState } from "react";
 type CopyLinkButtonProps = {
     text: string;
     ariaLabel?: string;
 };
 
-export function CopyLinkButton({ text }: CopyLinkButtonProps): JSX.Element {
+export function CopyLinkButton({
+    text,
+}: CopyLinkButtonProps): React.JSX.Element {
     const [copied, setCopied] = useState(false);
-    const [, copyToClipboard] = useCopyToClipboard();
 
-    useEffect(() => {
-        if (!copied) {
-            return;
-        }
-        const id = setTimeout(() => setCopied(false), 3000);
-        return () => clearTimeout(id);
-    }, [copied]);
-
-    const clickHandler = (
+    async function clickHandler(
         e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    ) => {
+    ) {
         e.preventDefault();
-        copyToClipboard(text);
-        setCopied(true);
-    };
+        if (navigator) {
+            await navigator.clipboard.writeText(text);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 3000);
+        }
+    }
 
     return (
         <button
             type="button"
             onClick={clickHandler}
             aria-label={`Copy ${text} link`}
-            className={`cursor-pointer inline-flex items-center rounded-md  ${
+            className={`cursor-pointer inline-flex items-center rounded-md ${
                 copied
                     ? "bg-violet-400 dark:bg-violet-800"
                     : "bg-violet-400 dark:bg-blue-950"
             } text-gray-200 px-2 py-1 text-sm gap-1`}
         >
-            <div className=" items-center px-1 w-8">
+            <div className="items-center px-1 w-8">
                 {copied ? (
                     <div>
                         <Check

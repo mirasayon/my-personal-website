@@ -1,10 +1,10 @@
 import type { Metadata } from "next/types";
-import { Contacts } from "%/contacts";
+import { Contacts } from "#/components/contacts";
 import { MainBioText } from "#/components/main-bio-text";
 
 export default function __HomePage() {
     return (
-        <div className={"flex flex-col items-center p-2"}>
+        <div className="flex flex-col items-center p-2">
             <MainBioText />
             <div className="flex flex-wrap justify-center">
                 <img
