@@ -14,11 +14,16 @@ export function CopyLinkButton({
         e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     ) {
         e.preventDefault();
-        if (navigator) {
-            await navigator.clipboard.writeText(text);
-            setCopied(true);
-            setTimeout(() => setCopied(false), 3000);
+        try { 
+            if (navigator) {
+                await navigator.clipboard.writeText(text);
+                setCopied(true);
+                setTimeout(() => setCopied(false), 3000);
+            }
+        } catch (error) {
+            console.error(error);
         }
+        
     }
 
     return (
@@ -32,9 +37,8 @@ export function CopyLinkButton({
                     : "bg-violet-400 dark:bg-blue-950"
             } text-gray-200 px-2 py-1 text-sm gap-1`}
         >
-            <div className="items-center px-1 w-8">
-                {copied ? (
-                    <div>
+            <div className="items-center px-1 w-8">        
+                    <div className={copied?"block":"hidden"}> 
                         <Check
                             size={iconSizes}
                             color={"black"}
@@ -46,8 +50,7 @@ export function CopyLinkButton({
                             className="hidden dark:block"
                         />
                     </div>
-                ) : (
-                    <div>
+                    <div className={copied?"hidden":"block"}>
                         <Clipboard
                             size={iconSizes}
                             color={"black"}
@@ -59,7 +62,7 @@ export function CopyLinkButton({
                             className="hidden dark:block"
                         />
                     </div>
-                )}
+               
             </div>
         </button>
     );
