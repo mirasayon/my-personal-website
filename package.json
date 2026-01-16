@@ -18,14 +18,14 @@
         "start:test": "next start --port 2005"
     },
     "dependencies": {
-        "@next/third-parties": "^16.1.1",
-        "next": "^16.1.1",
+        "@next/third-parties": "^16.1.2",
+        "next": "^16.1.2",
         "react": "^19.2.3",
         "react-dom": "^19.2.3"
     },
     "devDependencies": {
         "@tailwindcss/postcss": "^4.1.18",
-        "@types/node": "^25.0.6",
+        "@types/node": "^25.0.9",
         "@types/react": "^19.2.8",
         "@types/react-dom": "^19.2.3",
         "tailwindcss": "^4.1.18",
